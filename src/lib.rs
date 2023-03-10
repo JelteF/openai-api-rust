@@ -133,7 +133,7 @@ pub mod api {
     }
 
     impl TryFrom<CompletionArgsBuilder> for CompletionArgs {
-        type Error = String;
+        type Error = CompletionArgsBuilderError;
 
         fn try_from(builder: CompletionArgsBuilder) -> Result<Self, Self::Error> {
             builder.build()
