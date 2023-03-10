@@ -42,7 +42,7 @@ pub mod api {
         /// # use openai_api::api::CompletionArgs;
         /// CompletionArgs::builder().engine("davinci");
         /// ```
-        #[builder(setter(into), default = "\"davinci\".into()")]
+        #[builder(setter(into), default = "\"text-davinci-003\".into()")]
         #[serde(skip_serializing)]
         pub(super) engine: String,
         /// The prompt to complete from.
