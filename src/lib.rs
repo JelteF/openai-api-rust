@@ -107,11 +107,16 @@ pub mod api {
     }
 
     // TODO: add validators for the different arguments
-
     impl From<&str> for CompletionArgs {
         fn from(prompt_string: &str) -> Self {
+            prompt_string.to_string().into()
+        }
+    }
+
+    impl From<String> for CompletionArgs {
+        fn from(prompt_string: String) -> Self {
             Self {
-                prompt: prompt_string.into(),
+                prompt: prompt_string,
                 ..CompletionArgsBuilder::default()
                     .build()
                     .expect("default should build")
